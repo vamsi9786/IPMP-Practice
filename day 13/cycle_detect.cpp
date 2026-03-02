@@ -1,6 +1,13 @@
 Floyd's Cycle Detection
 using fast and slow pointer
 
+algorithm
+        ==>Why do they meet..?
+                Inside a loop:          
+                    Fast is moving 1 node faster than slow            
+                    That means the distance between them keeps reducing   (if cycle exists)   
+                    Eventually → distance becomes 0
+
 bool detectLoop(Node* head) {
     if (head == NULL) return false;
 

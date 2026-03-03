@@ -12,7 +12,7 @@ Using list stl
 class LRUCache {
     int cap;
     list<pair<int,int>> dll;  
-    unordered_map<int, list<pair<int,int>>> mp;
+    unordered_map<int, list<pair<int,int>>::iterator> mp;
 
 public:
     LRUCache(int capacity) {

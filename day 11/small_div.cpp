@@ -1,4 +1,4 @@
-Algorithm
+Algorithm:
       1. intution: req div lies b/w 1 and max of all no's in nums (1 <= req <= max_no in nums)
       2. low=1 , high= max_no , mid=low+(high-low)/2;
       3.     (i). if(sum of all divisons <= threshold) then high=mid;

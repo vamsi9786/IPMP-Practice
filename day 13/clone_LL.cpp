@@ -26,9 +26,6 @@ class Node {
 
 class Solution {
   public:
-    void newnode(Node* head){
-        
-    }
     Node* cloneLinkedList(Node* head) {
         Node* t=head;
         if(head==NULL) return NULL;

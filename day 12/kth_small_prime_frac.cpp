@@ -1,4 +1,4 @@
-https://leetcode.com/problems/k-th-smallest-prime-fraction/
+https://leetcode.com/problems/k-th-smallest-prime-fraction/1
 
 You are given a sorted integer array arr containing 1 and prime numbers, where all the integers of arr are unique. You are also given an integer k.
 For every i and j where 0 <= i < j < arr.length, we consider the fraction arr[i] / arr[j].

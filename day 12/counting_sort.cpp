@@ -1,4 +1,4 @@
-https://www.geeksforgeeks.org/problems/counting-sort/
+https://www.geeksforgeeks.org/problems/counting-sort/1
 
 Given a string s consisting of lowercase english letters, arrange all its letters in lexicographical order using Counting Sort
 

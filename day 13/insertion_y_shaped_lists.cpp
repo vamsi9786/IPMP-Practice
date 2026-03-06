@@ -1,4 +1,4 @@
-https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists
+https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1
 
 You are given the heads of two non-empty singly linked lists, head1 and head2, that intersect at a certain point. 
 Return that Node where these two linked lists intersect.

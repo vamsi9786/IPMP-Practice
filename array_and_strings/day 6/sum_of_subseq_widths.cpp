@@ -9,6 +9,7 @@ sol: idea: For each sequence,
                     we calculate as ("contibution of nums[i] as max " - " contibution of nums[i] as max ")
   Algo: 1. Sort the arr: sort(nums.begin(),nums.end());
         2. For each nums[i]: nums[i] is max for 'i' elements and min for 'n-i-1' ele
+          so final ans is Summation(nums[i]* (pow(2,i)-pow(2,n-i-1)))
 
   
 class Solution {

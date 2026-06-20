@@ -3,7 +3,7 @@ Algorithm:
       2. low=1 , high= max_no , mid=low+(high-low)/2;
       3.     (i). if(sum of all divisons <= threshold) then high=mid;
              (ii). else low=mid+1;
-      4. return low 
+      4. return low .
 
 class Solution {
 public:

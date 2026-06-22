@@ -18,6 +18,21 @@ class Node {
 class Solution {
   public:
     int getMiddle(Node* head) {
+        // code here
+        Node* fast=head;
+        Node* slow=head;
+        
+        while(fast!=NULL && fast->next!=NULL){
+            fast=fast->next->next;
+            slow=slow->next;
+        }
+        return slow->data;
+    }
+};
+
+class Solution {
+  public:
+    int getMiddle(Node* head) {
         int n=0;
         Node* t=head;
         while(t!=NULL){

@@ -8,7 +8,7 @@ Note: There can be leading zeros in the input lists, but there should not be any
 Method-1
       
 Algorithm
-1. find no of digits in both no's using ll count
+1. find no of digits in both no using ll count
 2. if(c1 > c2 ) then add leading zeroes to head2(i.e no.2) untill c1==c2;
           while(c1>c2): 
               Node* temp=new Node(0);

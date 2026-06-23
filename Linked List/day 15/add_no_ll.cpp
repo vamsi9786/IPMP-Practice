@@ -27,6 +27,7 @@ Algorithm:
       5. if(c) then add new Node(c) and add it before ans ; ans=newAns; return ans;
       6. remove leading zeroes if exists and return ans;
 
+Code-
 
 /*
 class Node {

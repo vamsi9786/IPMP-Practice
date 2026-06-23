@@ -8,30 +8,30 @@ Note: There can be leading zeros in the input lists, but there should not be any
 Method-1
       
 Algorithm
-      1. find no of digits in both no's using ll count
-      2. if(c1 > c2 ) then add leading zeroes to head2(i.e no.2) untill c1==c2;
-                while(c1>c2): 
-                    Node* temp=new Node(0);
-                    temp->next=head2;
-                    head2=temp;
-                    c2++;
-          else if(c1 < c2 ) do similarly for head1(i.e no.1)
-      3. add each digit recurrsively and modify carry(c)
-                    add_dig(Node* h1,Node* h2):
-                          if(!h1 && !h2) return NULL;
-                          Node* next=add_dig(h1->next,h2->next);
-                          sum = h1->next + h2->next + carry(c);
-                          Node* res=new Node(sum%10);
-                          res->next=next;
-                          c=sum/10;
-                          return res
-      4. ans=add_dig(h1,h2);
-      5. if(c) then add new Node(c) and add it before ans ; ans=newAns; return ans;
-      6. remove leading zeroes if exists and return ans;
+1. find no of digits in both no's using ll count
+2. if(c1 > c2 ) then add leading zeroes to head2(i.e no.2) untill c1==c2;
+          while(c1>c2): 
+              Node* temp=new Node(0);
+              temp->next=head2;
+              head2=temp;
+              c2++;
+    else if(c1 < c2 ) do similarly for head1(i.e no.1)
+3. add each digit recurrsively and modify carry(c)
+              add_dig(Node* h1,Node* h2):
+                    if(!h1 && !h2) return NULL;
+                    Node* next=add_dig(h1->next,h2->next);
+                    sum = h1->next + h2->next + carry(c);
+                    Node* res=new Node(sum%10);
+                    res->next=next;
+                    c=sum/10;
+                    return res
+4. ans=add_dig(h1,h2);
+5. if(c) then add new Node(c) and add it before ans ; ans=newAns; return ans;
+6. remove leading zeroes if exists and return ans;
 
-Code-
 
-/*
+Code
+
 class Node {
   public:
     int data;
@@ -41,7 +41,6 @@ class Node {
         next = NULL;
     }
 };
-*/
 
 class Solution {
   public:

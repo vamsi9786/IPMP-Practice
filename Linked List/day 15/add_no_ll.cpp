@@ -5,7 +5,9 @@ You have to return the head of the linked list representing the sum of these two
 
 Note: There can be leading zeros in the input lists, but there should not be any leading zeros in the output list.
 
-Algorithm:
+Method-1
+      
+Algorithm
       1. find no of digits in both no's using ll count
       2. if(c1 > c2 ) then add leading zeroes to head2(i.e no.2) untill c1==c2;
                 while(c1>c2): 
@@ -97,3 +99,75 @@ class Solution {
         return ans;
     }
 };
+
+
+Method-2
+
+Step 1: Remove Leading Zeros
+Step 2: Reverse Both Lists
+Step 3: Add Like Elementary School Addition
+Step 4: Reverse Result
+
+Code
+
+class Solution {
+public:
+
+    Node* reverse(Node* head) {
+        Node* prev = NULL;
+        Node* curr = head;
+
+        while (curr) {
+            Node* nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        return prev;
+    }
+
+    Node* removeLeadingZeros(Node* head) {
+        while (head && head->data == 0)
+            head = head->next;
+
+        return head ? head : new Node(0);
+    }
+
+    Node* addTwoLists(Node* num1, Node* num2) {
+
+        num1 = removeLeadingZeros(num1);
+        num2 = removeLeadingZeros(num2);
+
+        num1 = reverse(num1);
+        num2 = reverse(num2);
+
+        int carry = 0;
+
+        Node* dummy = new Node(0);
+        Node* tail = dummy;
+
+        while (num1 || num2 || carry) {
+
+            int sum = carry;
+
+            if (num1) {
+                sum += num1->data;
+                num1 = num1->next;
+            }
+
+            if (num2) {
+                sum += num2->data;
+                num2 = num2->next;
+            }
+
+            carry = sum / 10;
+
+            tail->next = new Node(sum % 10);
+            tail = tail->next;
+        }
+
+        return reverse(dummy->next);
+    }
+};
+

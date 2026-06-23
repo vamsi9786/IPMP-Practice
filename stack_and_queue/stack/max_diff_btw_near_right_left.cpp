@@ -55,7 +55,7 @@ int findMaxDiff(vector<int>& arr) {
     // does not exist. so for these elements rightsmaller 
     // element will be 0 and the left smaller element 
     // will be element present just below in the stack.
-    {
+    while(!stk.empty()){
         int ind = st.top();
         rightSmaller = 0;
         st.pop();

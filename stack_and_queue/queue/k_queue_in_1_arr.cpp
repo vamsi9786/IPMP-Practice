@@ -19,6 +19,27 @@ There will be a sequence of q queries represented as:
 The driver code will process the queries, call the corresponding functions, and print the results of dequeue, isEmpty, and isFull operations.
 You only need to implement the above four functions.
 
+//Similar to k-stack in 1 arr
+Algo:
+    DS used: 1. arr[] = Stores actual values.
+             2. front[] = Stores front index of every queue.
+             3. rear[] = Stores front index of every queue.
+             4. next[] = 2 uses: before allocated, stores next free idx and 
+                                 after allocated, stores (next ele in queue if not end ele ) or (if end of queue i.e -1) 
+             5. freeSpot = Stores next avail spot i.e idx for storing incoming ele
+
+    fn: 1. enqueue(x,i):  1. take next freeSpot as idx=freeSpot and update freeTop as freeSpot=next[idx]
+                          2. if(empty queue) update front as front[i]=idx;
+                             else (not empty) update next of rear as next[rear[i]]=idx;
+                          3. store ele in arr arr[idx]=x; and  update next[idx] as -1 
+                          4. update rear of queue as rear[i]=idx;
+        
+        2. pop(i):  1. take idx as popped ele i.e idx=front[i] and update front as front[i]=next[idx];
+                    2. if(front[i]==-1) update rear as rear[i]=-1;
+                    2. update freeSpot and next[idx] as next[idx]=freeSpot and freeSpot=idx;
+                    3. return arr[idx]
+
+
 class kQueues {
     private:
         int* arr;

@@ -14,8 +14,16 @@ You only need to implement the above two functions.
 
 
 Algo:
-    DS used:
-
+    DS used: 1. arr[] = Stores actual values.
+             2. top[] = Stores top index of every stack.
+             3. next[] = 2 uses: before allocated, stores next free idx and after allocated, stores next ele in stack i.e top[i] 
+    fn: 1. push(x,i): 1. take next freeTop as idx=freeTop and update freeTop as freeTop=next[idx]
+                      2. store ele in arr arr[idx]=x;
+                      3. update next[idx] and top[i] as next[idx]=top[i] and top[i]=idx;
+        
+        2. pop(i):  1. take idx as popped ele i.e idx=top[i] and update top as top[i]=next[idx];
+                    2. update freeTop and next[idx] as next[idx]=freeTop and freeTop=idx;
+                    3. return arr[idx]
 
 class kStacks {
     // main array to store elements

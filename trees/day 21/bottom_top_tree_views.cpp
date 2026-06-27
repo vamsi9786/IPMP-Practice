@@ -1,7 +1,7 @@
 1. Bottom View
 
 Algo: use level order traversal and hd (horizontal distance) and 
-      map for mapping hd and node and update latest val for that hd 
+      map for mapping hd and node and update latest val for that hd . last occurred value for that hd is added to result
 
 /*
 Definition for Node
@@ -50,3 +50,9 @@ class Solution {
         return res;
     }
 };
+
+2.Top View
+
+Algo: use level order traversal and hd (horizontal distance) and 
+      map for mapping hd and node and update first val for that hd . first occurence of that hd is added to result
+

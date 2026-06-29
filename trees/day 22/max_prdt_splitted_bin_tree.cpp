@@ -5,7 +5,7 @@ Return the maximum product of the sums of the two subtrees. Since the answer may
 
 Note that you need to maximize the answer before taking the mod and not after taking it.
 
-Idea: Compute each subtree sum and for each subtree: calc ans=max(ans,sub*(total-sub))
+Idea: Compute each subtree sum by using dfs and for each subtree: calc ans=max(ans,sub*(total-sub))
 
 /**
  * Definition for a binary tree node.

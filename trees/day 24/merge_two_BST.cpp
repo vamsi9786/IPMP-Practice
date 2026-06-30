@@ -11,8 +11,14 @@ Method 1 (Merge Inorder Traversals):
       The arrays created in steps 1 and 2 are sorted arrays. Merge the two sorted arrays into one array of size m + n. This step takes O(m+n) time. 
       Construct a balanced tree from the merged array using the technique discussed in this post. This step takes O(m+n) time.
 
-// C++ Code for the above approach
+Method 2 (Insert elements of the first tree to the second):
+      Take all elements of the first BST one by one, and insert them into the second BST. 
+      Inserting an element to a self-balancing BST takes Logn time (See this) where n is the size of the BST. 
+      So time complexity of this method is Log(n) + Log(n+1) ... Log(m+n-1). The value of this expression will be between mLogn and mLog(m+n-1).
+      As an optimization, we can pick the smaller tree as the first tree.
 
+// C++ Code for the above approach
+Method 1
 /* A binary tree node has data,
 a pointer to left child
 and a pointer to right child */

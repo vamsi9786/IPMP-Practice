@@ -5,7 +5,7 @@ Given inorder and level-order traversals of a Binary Tree, construct the Binary 
 Algo:
       Step 1: If the level-order array is empty, return NULL.
       Step 2: The first element of the level-order traversal is the root. ( Root = levelOrder[0] )
-      Step 3: Find the root's index in the inorder traversal.
+      Step 3: Find the root index in the inorder traversal.
               This divides the inorder array into: Left subtree and Right subtree
       Step 4: Store all elements of the left inorder in a hash set (or use a map for membership checking).
       Step 5: Traverse the remaining level-order array (excluding the root).

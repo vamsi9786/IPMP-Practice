@@ -4,6 +4,11 @@ Given postorder traversal of a Binary Search Tree, you need to construct a BST f
 The output will be inorder traversal of the constructed BST.
 
 Method-1: O(n)
+
+Algo: use postorder ( left-right-root) so move postorder from n-1 to 0;
+      if(idx < 0) or if( post[idx] is out of bounds ) then return NULL
+      else create root node and do root->right and root->left as postorder
+
 /* Structure of tree node
 class Node {
 public:

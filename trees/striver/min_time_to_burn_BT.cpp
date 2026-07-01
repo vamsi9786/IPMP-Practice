@@ -10,7 +10,7 @@ In 2nd second it burns nodes 4, 5, 6.
 In 3rd second it burns node 7.
 
 Approach:
-Method 1: Do similar to "all nodes k dist away problem.
+Method 1: Do similar to : all nodes k dist away problem.
 
 Method 2: 
       1. Convert Binary Tree to Graph: Use DFS or BFS to traverse the tree. For each node:

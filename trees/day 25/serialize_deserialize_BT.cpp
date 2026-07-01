@@ -13,7 +13,11 @@ Idea: store nodes by delimiting with "  " in string.
       change values accordingly: i.e. 1. to_string(node->val) ===> res+=(to_string(node->val))+" "
                                       2. stoi(val) ===> new Node(stoi(val)) ------(val ==== ss>>val) datastream ss(data)
                                       
+Your Codec object will be instantiated and called as such:
+Codec ser, deser;
+TreeNode* ans = deser.deserialize(ser.serialize(root));
 
+In C++:
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -86,3 +90,52 @@ public:
 // Your Codec object will be instantiated and called as such:
 // Codec ser, deser;
 // TreeNode* ans = deser.deserialize(ser.serialize(root));
+
+In C:
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+struct TreeNode* newNode(int val) {
+    struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    node->val = val;
+    node->left = node->right = NULL;
+    return node;
+}
+
+void serialize(struct TreeNode* root, FILE *fp) {
+
+    if(root == NULL) {
+        fprintf(fp, "# ");
+        return;
+    }
+
+    fprintf(fp, "%d ", root->val);
+
+    serialize(root->left, fp);
+    serialize(root->right, fp);
+}
+
+struct TreeNode* deserialize(FILE *fp) {
+
+    char str[20];
+
+    if(fscanf(fp, "%s", str) != 1)
+        return NULL;
+
+    if(strcmp(str, "#") == 0)
+        return NULL;
+
+    struct TreeNode* root = newNode(atoi(str));
+
+    root->left = deserialize(fp);
+    root->right = deserialize(fp);
+
+    return root;
+}

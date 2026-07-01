@@ -12,7 +12,6 @@ Idea: The optimal interview solution uses two stacks:
 Code:
 class Solution {
 public:
-
     void initPred(TreeNode* root, double target, stack<TreeNode*>& pred){
         while(root){
             if(root->val <= target){

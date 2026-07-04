@@ -15,7 +15,8 @@ Algo:  Do DFS similar to no_of_islands problem.
                 Store the resulting vector in a set.
            The size of the set is the answer.
 
-  class Solution {
+Code:        
+class Solution {
 public:
     int n, m;
 

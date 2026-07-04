@@ -5,7 +5,11 @@ You are given an m x n binary matrix grid, where 0 represents a sea cell and 1 r
 A move consists of walking from one land cell to another adjacent (4-directionally) land cell or walking off the boundary of the grid.
 
 Return the number of land cells in grid for which we cannot walk off the boundary of the grid in any number of moves.
-
+    
+Method 2: 
+Idea: Use DFS and make all next 1==>0 i.e make all 1 in same enclave/island to 0. after doing dfs for all boundary 1. 
+      The remaining 1 are not reachable.
+    
 Method 1: Use BFS
 
 class Solution {

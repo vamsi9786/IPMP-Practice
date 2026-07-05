@@ -6,6 +6,10 @@ If no land or water exists in the grid, return -1.
 
 The distance used in this problem is the Manhattan distance: the distance between two cells (x0, y0) and (x1, y1) is |x0 - x1| + |y0 - y1|.
 
+Idea: Similar to bridge question.
+      Do Multi-source BFS (take all 1s into BFS queue).
+      One BFS level ===> incr dist by 1. (dist++)
+
 class Solution {
 public:
     int maxDistance(vector<vector<int>>& grid) {

@@ -1,5 +1,17 @@
 Euler Circuit and Path for directed graph
 
+Euler Path:
+Conditions: 
+        1. Exactly one vertex satisfies: outdegree = indegree + 1 (Start)
+        2. Exactly one vertex satisfies: indegree = outdegree + 1 (End)
+        3. All remaining vertices satisfy: indegree == outdegree
+        4. Also graph should be connected (ignoring direction, or satisfy the SCC condition depending on the theorem being implemented).
+
+Euler Circuit:
+Conditions:
+        1. Every vertex satisfies: ( indegree == outdegree )
+        3. Graph is strongly connected (or all non-zero degree vertices belong to one SCC).
+
 1. Euler Path:
 
 bool hasEulerPath(int V, vector<vector<int>>& edges) {

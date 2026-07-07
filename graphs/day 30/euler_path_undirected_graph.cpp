@@ -1,5 +1,5 @@
 
-Euler's Theorem (Undirected Graph)
+Euler Theorem (Undirected Graph)
 
 An undirected graph has an Eulerian Path if and only if:
     1. All vertices having non-zero degree belong to one connected component.
@@ -16,7 +16,15 @@ Why only 0 or 2 odd-degree vertices?
             3. So edges are used in pairs.
 Therefore, intermediate vertices must have even degree.
 
+Algo: 1. Count degree of every vertex.
+      2. Find one vertex whose degree > 0. and Run DFS.
+      3. If any vertex (degree>0) ==> is still unvisited, graph is disconnected. ==> return 0.
+      4. Count odd degree vertices.
+      5. Return: odd==0  -> 2
+                 odd==2  -> 1
+                 else    -> 0
 
+Code:
 class Solution {
 public:
 

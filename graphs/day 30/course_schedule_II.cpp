@@ -9,7 +9,8 @@ return any of them. If it is impossible to finish all courses, return an empty a
 
 Idea/Algo: Use topo sort.
            if(ans.size()!=n) ====> This indicates there exists a cycle
-            (topo_sort.size()!=V)
+            (topo_sort.size()!=V) ===> Cycle
+            (topo_sort.size()==V) ===> DAG 
 
 class Solution {
 public:

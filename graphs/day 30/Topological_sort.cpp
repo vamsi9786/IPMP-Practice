@@ -12,6 +12,9 @@ If your returned Topological sort is correct then the output will be true else f
 Method-1: BFS (Kahns Algo)
 Method-2: DFS+Stack
 Method-3: DFS+Stack (reverse the vector instead of stack)
+
+In Method-1: if (topo_sort.size()!=V) ===> Cycle
+             if (topo_sort.size()==V) ===> DAG 
   
 Method-1: Kahns algo
 class Solution {

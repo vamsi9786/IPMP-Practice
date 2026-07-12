@@ -23,6 +23,20 @@ Methods:
                         connect root_bottomm and bottom_top ===> root+2,bottom+0    
            Step 3: Count no of parent nodes and incr ans (ans++) and return ans.
 
+   Method 2: A slash cuts a square diagonally. Instead of dealing with triangles, expand every cell into a 3×3 block.
+             Cell==> 0 0 1
+                     0 1 0
+                     1 0 0
+             Now the entire problem becomes: Count connected components of zeros using DFS.
+
+===> Which approach is better?
+      Approach	       Time	          Space	Interview
+3×3 Expansion + DFS	   O(N²)	  Higher (9× cells)	⭐⭐⭐ Easy to explain
+4 Triangles + DSU	     O(N²)	  Lower	⭐⭐⭐⭐⭐ Most expected
+
+Method 2:
+Code:
+
 class DSU{
 public:
     vector<int> par,size;

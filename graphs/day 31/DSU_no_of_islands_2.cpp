@@ -9,6 +9,19 @@ You need to return an array of size K.
 
 Idea: Use DSU (Dis-joint Set Union) 
 
+====> In union_fn(u,v) ===> merge smaller tree into larger tree size
+      ====> void unionjoin(int i,int j){
+                        int u=findPar(i);
+                        int v=findPar(j);
+                        
+                        if(u==v) return;
+                        
+                        if(size[u]<size[v]) swap(u,v);
+                        
+                        par[v]=u;
+                        size[u]+=size[v];
+            }
+
 Algo:  For every operation:
             1. If already land: answer.push_back(count); continue;
             2. Mark as land.
@@ -17,7 +30,8 @@ Algo:  For every operation:
                     If neighbor is land:
                         Different parent? Merge and Decrease count.
             5. Store answer.
-  
+
+                        
 /**
  * Definition for a point.
  * struct Point {

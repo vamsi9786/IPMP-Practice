@@ -17,6 +17,8 @@ Idea: Use DSU + 2 parents
         1. A node has two parents. 
         2. There is a cycle.
 
+Note: for undirected one ===> only DSU is enough(only cycle enough).
+  
 The correct algorithm :
           There are three cases:
               Case 1: Only cycle ===> No node has indegree 2. Answer = edge creating the cycle. DSU alone works.

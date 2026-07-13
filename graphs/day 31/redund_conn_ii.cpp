@@ -17,7 +17,7 @@ Idea: Use DSU + 2 parents
         1. A node has two parents. 
         2. There is a cycle.
 
-Note: for undirected one ===> only DSU is enough(only cycle enough).
+=====> Note: for undirected one ===> only DSU is enough(only cycle enough).
   
 The correct algorithm :
           There are three cases:

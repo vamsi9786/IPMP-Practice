@@ -25,6 +25,7 @@ class Solution {
         if(arr[mid]==0){
           swap(arr[mid],arr[low]);
           low++;
+          mid++;
         }
         else if(arr[mid]==1){
           mid++;

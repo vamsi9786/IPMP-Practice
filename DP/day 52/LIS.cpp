@@ -24,6 +24,45 @@ We do: auto it = lower_bound(tails.begin(), tails.end(), 5);
         Then ===> *it = 5;
         Now ===> 2 3 5 18
 
+//Binary search O(nlogn)
+//n*logn
+class Solution {
+public:
+    int lowerBound(vector<int>& arr,int x){
+        int l=0,h=arr.size()-1;
+        int ans=arr.size();
+
+        while(l<=h){
+            int m=(l+h)/2;
+            if(arr[m]>=x){
+                ans=m;
+                h=m-1;
+            }
+            else{
+                l=m+1;
+            }
+        }
+        return ans;
+    }
+
+    int lengthOfLIS(vector<int>& nums) {
+        int n=nums.size();
+        
+        vector<int> arr;
+        for(int x:nums){
+            //we want first ele >=x in arr
+            int it=lowerBound(arr,x);
+            if(it==arr.size()){
+                arr.push_back(x);
+            }
+            else{
+                arr[it]=x;
+            }
+        }
+        return arr.size();
+    }
+};
+//O(nlogn) 
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {

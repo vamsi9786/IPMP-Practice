@@ -35,6 +35,8 @@ public:
         // still pattern exists and it should all contain *(stars) else false
         if(i<0) return isAllStars(j,p);
 
+        if(dp[i][j]!=-1) return dp[i][j];
+
         if(s[i]==p[j] || p[j]=='?'){
             return dp[i][j]=helper(i-1,j-1,s,p,dp);
         }

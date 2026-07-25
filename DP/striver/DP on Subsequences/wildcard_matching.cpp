@@ -26,7 +26,7 @@ public:
         return true;
     }
 
-    bool helper(int i,int j,string& s,string& p,vector<vector<bool>>& dp){
+    bool helper(int i,int j,string& s,string& p,vector<vector<int>>& dp){
         if(i<0 && j<0) return true;
 
         // still string exists so false
@@ -52,7 +52,7 @@ public:
 
     bool isMatch(string s, string p) {
         int n=s.size(),m=p.size();
-        vector<vector<bool>> dp(n+1,vector<bool>(m+1,false));
+        vector<vector<bool>> dp(n+1,vector<int>(m+1,-1));
 
         return helper(n-1,m-1,s,p,dp);
     }

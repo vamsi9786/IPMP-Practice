@@ -24,11 +24,11 @@ Algo: We need the shortest string that contains both as subsequences.
 class Solution {
 public:
     int helper(int i,int j,string& s1,string& s2,vector<vector<int>>& dp){
-        if(i<0 || j<0) return 0;
+        if(i<=0 || j<=0) return 0;
 
         if(dp[i][j]!=-1) return dp[i][j];
 
-        if(s1[i]==s2[j]) return dp[i][j]=1+helper(i-1,j-1,s1,s2,dp);
+        if(s1[i-1]==s2[j-1]) return dp[i][j]=1+helper(i-1,j-1,s1,s2,dp);
         return dp[i][j]=max(helper(i,j-1,s1,s2,dp),helper(i-1,j,s1,s2,dp));
     }
 
@@ -40,33 +40,33 @@ public:
 
         vector<vector<int>> dp(n+1,vector<int>(m+1,-1));
 
-        helper(n-1,m-1,str1,str2,dp);
+        helper(n,m,str1,str2,dp);
 
-        int i=n-1,j=m-1;
+        int i=n,j=m;
         string ans;
 
-        while(i>=0 && j>=0){
-            if(str1[i]==str2[j]){
-                ans+=str1[i];
+        while(i>0 && j>0){
+            if(str1[i-1]==str2[j-1]){
+                ans+=str1[i-1];
                 i--;
                 j--;
             }
-            else if(dp[i][j+1]>dp[i+1][j]){
-                ans+=str1[i];
+            else if(dp[i-1][j]>dp[i][j-1]){
+                ans+=str1[i-1];
                 i--;
             }
             else{
-                ans+=str2[j];
+                ans+=str2[j-1];
                 j--;
             }
         }
 
-        while(i>=0){
-            ans+=str1[i];
+        while(i>0){
+            ans+=str1[i-1];
             i--;
         }
-        while(j>=0){
-            ans+=str2[j];
+        while(j>0){
+            ans+=str2[j-1];
             j--;
         }
 

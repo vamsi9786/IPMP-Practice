@@ -6,7 +6,8 @@ if the dimensions of the 2-D base of the lower box are each strictly larger than
 Of course, you can rotate a box so that any side functions as its base. It is also allowable to use multiple instances of the same type of box. 
 Your task is to complete the function maxHeight which returns the height of the highest possible stack so formed.
 
-Note: Base of the lower box should be strictly larger than that of the new box we're going to place. This is in terms of both length and width, not just in terms of area. So, two boxes with same base cannot be placed one over the other.
+Note: Base of the lower box should be strictly larger than that of the new box we are going to place. 
+      This is in terms of both length and width, not just in terms of area. So, two boxes with same base cannot be placed one over the other.
 
 Algo: 1. generate all possibilites (all rotations) ==> and push into boxes (h,max(l,w),min(l,w)) and (l,max(h,w),min(h,w)) and (w,max(l,h),min(l,h)).
       2. sort based on area

@@ -1,7 +1,7 @@
 https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/description/
 
 There are n items each belonging to zero or one of m groups where group[i] is the group that the 
-i-th item belongs to and it's equal to -1 if the i-th item belongs to no group. 
+i-th item belongs to and it is equal to -1 if the i-th item belongs to no group. 
 The items and the groups are zero indexed. A group can have no item belonging to it.
 
 Return a sorted list of the items such that:
@@ -18,7 +18,7 @@ Algo/Idea: do 2 toposorts based on items and grps
            3. Do Toposort for ItemsGraph ==> itemTopo.
            4. Do Toposort for GrpGraph ==> grpTopo.
            5. insert all items to respective grps based on obtained itemTopo sort. ItemsinGrp[group[item]].push_back(item)
-           6. Based on GrpTopo sort ==> insert items to final result. ==> res.insert(res.begin(),res.end(),ItemsinGrp[g]) 
+           6. Based on GrpTopo sort ==> insert items to final result. ==> res.insert(res.end(),ItemsinGrp[g].begin(),ItemsinGrp[g].end()) 
 
 class Solution {
 public:

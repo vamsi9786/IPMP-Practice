@@ -78,13 +78,14 @@ public:
             itemsInGrp[group[item]].push_back(item);
         }
 
-        vector<int> ans;
+        vector<int> res;
         for(int g:grpTopo){
+            //res.insert(res.end(),itemsInGrp[g].begin(),itemsInGrp[g].end());
             for(int item:itemsInGrp[g]){
-                ans.push_back(item);
+                res.push_back(item);
             }
         }
 
-        return ans;
+        return res;
     }
 };
